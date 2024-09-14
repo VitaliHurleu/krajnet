@@ -15,6 +15,7 @@ pipeline {
         }
         stage ("Quality Gate") {
             steps {
+                echo 'Quality Gate'
             }            
         }    
         stage('Build'){
@@ -26,13 +27,18 @@ pipeline {
         }
         stage('Test image') {
             steps {
+                echo 'test image'
             }  
         }     
         stage('Push'){
             steps{
+                echo 'push image'
             }
         }  
         stage('Deploy'){
+            steps{
+                echo 'Deploy'
+            }
         }               
     }
 }
