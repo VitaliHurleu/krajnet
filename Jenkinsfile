@@ -22,7 +22,8 @@ pipeline {
             steps{
 /*                sh 'docker build . -t "${imagename}:latest"' */
                 sh 'docker-compose up -d'
-                echo 'up gitlab ce'
+                echo 'up gitlab ce pause 180 sec'
+                sh 'sleep 180'
             }
         }
         stage('Test image') {
