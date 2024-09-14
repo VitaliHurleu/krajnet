@@ -27,7 +27,8 @@ pipeline {
         }
         stage('Test image') {
             steps {
-                echo 'test image'
+                sh 'docker exec -it gitlab-ce cat /etc/gitlab/ssh_host_ed25519_key.pub' >> ssh_host_key1.pub
+                sh 'cat ssh_host_key1.pub' 
             }  
         }     
         stage('Push'){
